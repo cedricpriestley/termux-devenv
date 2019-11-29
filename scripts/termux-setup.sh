@@ -10,22 +10,22 @@ pkg i bash-completion
 pkg i figlet pv
 exit 0
 # Install Aria
-pkg i aria2
+pkg i aria2 -y
 
 # Install Megatools
-pkg i megatools
+pkg i megatools -y
 
 # Grant storage permission
 termux-storage-setup
 
 # Create "/sdcard/Projects/Websites" directory
-mkdir -p $PREFIX/storage/Projects/Websites
+mkdir -p $PREFIX/storage/shared/Projects/Websites
 
 # Install chroot
-pkg i proot
+pkg i proot -y
 
 # Install Oh My ZSH
-pkg i curl git zsh
+pkg i curl git zsh -y
 
 # Install WFuzz
 pkg i python python-dev openssl openssl-dev curl clang libcrypt libcrypt-dev libcurl libcurl-dev
