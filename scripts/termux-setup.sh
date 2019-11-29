@@ -8,21 +8,21 @@ pkg i bash-completion
 
 # Enable Two Line Keyboard
 mkdir .termux
-echo "extra-keys = [['ESC','/','-','HOME','UP','END','PGUP'],['TAB','CTRL','ALT','LEFT','DOWN','RIGHT','PGDN']]" >> .termux/termux.properties
+echo "extra-keys = [['ESC','/','-','HOME','UP','END','PGUP'],['TAB','CTRL','ALT','LEFT','DOWN','RIGHT','PGDN']]" >echo "extra-keys = [['ESC','/','-','HO    ME','UP','END','PGUP'],['TAB','CTRL','    ALT','LEFT','DOWN','RIGHT','PGDN']]" >> .termux/termux.properties
 
 # Enable spell correction for bash
 echo 'shopt -s cdspell' >> .bashrc
 
 # Change prompt
-echo 'PS1="\[\033[1;30m\][\@] \[\033[1;37m\]Cedric@Termux:\w $ \[\033[0;37m\]"' >> .bashrc
+#echo 'PS1="\[\033[1;30m\][\@] \[\033[1;37m\]Cedric@Termux:\w $ \[\033[0;37m\]"' >> .bashrc
 
 # Disable start up banner
-touch ~/.hushlogin
+touct ~/.hushlogin
 
 # Add welcome banner
 pkg i figlet pv
 echo 'figlet "Welcome Cedric" | pv -qL 500' >> .bashrc
-
+exit 0
 # Install Aria
 pkg i aria2
 
@@ -148,7 +148,11 @@ pkg i nodejs
 pkg i python && pip install -U sqlmap
 
 # Vim
-pkg i vim
+pkg i vim wget -y
+
+mkdir $HOME/.vim/colors
+
+wget -P $HOME/.vim/colors https://raw.githubusercontent.com/sjl/badwolf/master/colors/badwolf.vim
 
 # Youtube-DL
 pkg i ffmpeg python && pip install -U youtube_dl
@@ -161,4 +165,7 @@ chmod +x ./composer.phar
 mv ./composer.phar /data/data/com.termux/files/usr/bin/compose
 
 #composer global require psy/psysh
-#termux-fix-shebang ~/.composer/vendor/bin/psysh
+#termux-fix-shebang ~/.composer/vendor/bin/psys
+
+# MAN
+pkg i manh
