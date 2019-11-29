@@ -28,7 +28,7 @@ pkg i proot -y
 pkg i curl git zsh -y
 
 # Install WFuzz
-pkg i python python-dev openssl openssl-dev curl clang libcrypt libcrypt-dev libcurl libcurl-dev
+pkg i python  openssl  curl clang libcrypt  libcurl 
 
 # Select SSL Library
 export PYCURL_SSL_LIBRARY=openssl
@@ -36,41 +36,14 @@ export PYCURL_SSL_LIBRARY=openssl
 pip install wfuzz
 
 # Install TOR & TORSOCKS
-pkg i torsocks
+pkg i torsocks -y
 
 echo "Socks5Proxy 127.0.0.1:9050" >> $PREFIX/etc/tor/torrc
-
-# Start tor
-tor&
-
-# Stop tor
-pkill tor
-
-# Torify shell
-source torsocks on
-
-# Stop torifing shell
-source torsocks off
-
-# Always use TCP scan
-#nmap -sT blah blah blah
 
 # Check all open ports on your phone (Root required)
 #tsu: pkg i tsu
 #tsu
 #netstat -puntl
-
-# SSH
-pkg i openssh
-
-cd $HOME/.ssh
-
-ssh-keygen -o -b 4096 -t rsa
-
-# Add content of public key to ~/.ssh/authorized_keys
-
-# Start SSH server on port 8022
-sshd
 
 # Apache
 pkg i apache2
@@ -133,4 +106,18 @@ mv ./composer.phar /data/data/com.termux/files/usr/bin/compose
 #termux-fix-shebang ~/.composer/vendor/bin/psys
 
 # MAN
-pkg i manh
+pkg i man
+
+
+# SSH
+pkg i openssh
+
+cd $HOME/.ssh
+
+ssh-keygen -o -b 4096 -t rsa
+
+# Add content of public key to ~/.ssh/authorized_keys
+
+# Start SSH server on port 8022
+sshd
+

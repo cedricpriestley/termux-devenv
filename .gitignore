@@ -4,4 +4,8 @@
 .hushlogin
 .vim/colors
 .lesshst
+.cache
+.tor
+.ssh
 *.swp
+storage
