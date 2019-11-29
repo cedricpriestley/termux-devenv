@@ -3,3 +3,5 @@
 .wget-hsts
 .hushlogin
 .vim/colors
+.lesshst
+*.swp

@@ -6,53 +6,14 @@ cd $HOME
 # Enable tab completion
 pkg i bash-completion
 
-# Enable Two Line Keyboard
-mkdir .termux
-echo "extra-keys = [['ESC','/','-','HOME','UP','END','PGUP'],['TAB','CTRL','ALT','LEFT','DOWN','RIGHT','PGDN']]" >echo "extra-keys = [['ESC','/','-','HO    ME','UP','END','PGUP'],['TAB','CTRL','    ALT','LEFT','DOWN','RIGHT','PGDN']]" >> .termux/termux.properties
-
-# Enable spell correction for bash
-echo 'shopt -s cdspell' >> .bashrc
-
-# Change prompt
-#echo 'PS1="\[\033[1;30m\][\@] \[\033[1;37m\]Cedric@Termux:\w $ \[\033[0;37m\]"' >> .bashrc
-
-# Disable start up banner
-touct ~/.hushlogin
-
-# Add welcome banner
+# Figlet
 pkg i figlet pv
-echo 'figlet "Welcome Cedric" | pv -qL 500' >> .bashrc
 exit 0
 # Install Aria
 pkg i aria2
 
 # Install Megatools
 pkg i megatools
-
-# Open a new terminal with ctrl + t (volume down + t)
-shortcut.create-session = ctrl + t
-
-# Go one session down with (for example) ctrl + 2
-shortcut.next-session = ctrl + 2
-
-# Go one session up with (for example) ctrl + 1
-shortcut.previous-session = ctrl + 1
-
-# Rename a session with (for example) ctrl + n
-shortcut.rename-session = ctrl + n
-
-# Vibrate device (default).
-bell-character=vibrate
-
-# Beep with a sound.
-#bell-character=beep
-
-# Ignore bell character.
-#bell-character=ignore
-#back-key=escape
-
-# Hide keyboard or leave app (default)
-back-key=back
 
 # Grant storage permission
 termux-storage-setup
@@ -117,7 +78,7 @@ pkg i apache2
 pkg i php php-apache
 
 # MySQL
-pkg i mariad
+pkg i mariadb
 
 # 7z
 pkg i p7zip
@@ -146,6 +107,9 @@ pkg i nodejs
 
 # SQLMap
 pkg i python && pip install -U sqlmap
+
+# Tree
+pkg i tree
 
 # Vim
 pkg i vim wget -y
