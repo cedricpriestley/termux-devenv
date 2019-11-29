@@ -8,7 +8,7 @@ pkg i bash-completion
 
 # Figlet
 pkg i figlet pv
-exit 0
+
 # Install Aria
 pkg i aria2 -y
 
@@ -56,9 +56,9 @@ source torsocks off
 #nmap -sT blah blah blah
 
 # Check all open ports on your phone (Root required)
-tsu: pkg i tsu
-tsu
-netstat -puntl
+#tsu: pkg i tsu
+#tsu
+#netstat -puntl
 
 # SSH
 pkg i openssh
@@ -70,6 +70,7 @@ ssh-keygen -o -b 4096 -t rsa
 # Add content of public key to ~/.ssh/authorized_keys
 
 # Start SSH server on port 8022
+sshd
 
 # Apache
 pkg i apache2
