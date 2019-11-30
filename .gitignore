@@ -2,7 +2,9 @@
 .viminfo
 .wget-hsts
 .hushlogin
+.vim/autoload
 .vim/colors
+.vim/plugged
 .lesshst
 .cache
 .tor

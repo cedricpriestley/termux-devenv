@@ -115,8 +115,11 @@ cd $HOME/.ssh
 ssh-keygen -o -b 4096 -t rsa
 
 # Add content of public key to ~/.ssh/authorized_keys
-
+cat $HOME/.ssh/id_rsa.pub >> $HOME/.ssh/authorized_key
+s
 # Start SSH server on port 8022
 sshd
 
 ./nnn-setup.sh
+
+#ssh-copy-id $(whoami)@localhost
