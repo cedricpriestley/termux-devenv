@@ -16,10 +16,10 @@ pkg i aria2 -y
 pkg i megatools -y
 
 # Grant storage permission
-termux-storage-setup
+#termux-storage-setup
 
 # Create "/sdcard/Projects/Websites" directory
-mkdir -p $PREFIX/storage/shared/Projects/Websites
+#mkdir -p $PREFIX/storage/shared/Projects/Websites
 
 # Install chroot
 pkg i proot -y
@@ -28,12 +28,13 @@ pkg i proot -y
 pkg i curl git zsh -y
 
 # Install WFuzz
-pkg i python  openssl  curl clang libcrypt  libcurl 
+pkg i python  openssl  curl clang libcrypt  libcurl -y
 
 # Select SSL Library
 export PYCURL_SSL_LIBRARY=openssl
 
 pip install wfuzz
+pip install --upgrade pip
 
 # Install TOR & TORSOCKS
 pkg i torsocks -y
@@ -46,13 +47,13 @@ echo "Socks5Proxy 127.0.0.1:9050" >> $PREFIX/etc/tor/torrc
 #netstat -puntl
 
 # Apache
-pkg i apache2
+pkg i apache2 -y
 
 # PHP
-pkg i php php-apache
+pkg i php php-apache -y
 
 # MySQL
-pkg i mariadb
+pkg i mariadb -y
 
 # 7z
 pkg i p7zip
@@ -60,24 +61,22 @@ pkg i p7zip
 # C/C++ Compiler
 pkg i clane
 # FFMpeg
-pkg i ffmpeg
+pkg i ffmpeg -y
 
 # Git
 pkg i git
-git config --global user.name "Cedric Priestley"
-git config --global user.email cedricpriestley@gmail.com
 
 # Hydra
-pkg i hydra
+pkg i hydra -y
 
 # Nano
 pkg i nano
 
 # Nmap
-pkg i nmap
+pkg i nmap -y
 
 # Node
-pkg i nodejs
+pkg i nodejs -y 
 
 # SQLMap
 pkg i python && pip install -U sqlmap
@@ -87,13 +86,11 @@ pkg i tree
 
 # Vim
 pkg i vim wget -y
-
 mkdir $HOME/.vim/colors
-
 wget -P $HOME/.vim/colors https://raw.githubusercontent.com/sjl/badwolf/master/colors/badwolf.vim
 
 # Youtube-DL
-pkg i ffmpeg python && pip install -U youtube_dl
+pkg i ffmpeg python && pip install -U youtube_dl -y
 
 # composer
 curl -L https://github.com/yuloh/composer-termux/releases/download/1.6.2/composer.phar -o composer.phar
@@ -106,11 +103,11 @@ mv ./composer.phar /data/data/com.termux/files/usr/bin/compose
 #termux-fix-shebang ~/.composer/vendor/bin/psys
 
 # MAN
-pkg i man
+pkg i man -y
 
 
 # SSH
-pkg i openssh
+pkg i openssh -y
 
 cd $HOME/.ssh
 
