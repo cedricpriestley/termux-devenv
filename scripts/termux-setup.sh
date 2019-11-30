@@ -54,6 +54,7 @@ pkg i php php-apache -y
 
 # MySQL
 pkg i mariadb -y
+/data/data/com.termux/files/usr/bin/mysqld --skip-grant-tables --general-log &
 
 # 7z
 pkg i p7zip
