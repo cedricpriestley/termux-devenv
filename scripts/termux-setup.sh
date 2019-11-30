@@ -119,3 +119,4 @@ ssh-keygen -o -b 4096 -t rsa
 # Start SSH server on port 8022
 sshd
 
+./nnn-setup.sh
